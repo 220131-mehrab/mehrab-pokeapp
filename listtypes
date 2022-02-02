@@ -1,4 +1,26 @@
 #!/bin/bash
 
 FILE=~/pokeapp/pokedex.csv
-cat $FILE | cut -d , -f 4 | sort | uniq | grep -v Type1
+
+usage() {
+	echo "$0" <command> [<args>]
+	echo Commands
+	echo 	list		list all types
+	echo	num		count total number of type as arg
+}
+
+list() {
+	cat $FILE | cut -d , -f 4 | sort | uniq | grep -v Type1
+}
+
+num() {
+	cat $FILE | cut -d , -f 4 | grep "$1" | uniq -c
+}
+
+if [[ $# -eq 0 ]] ; then
+	usage
+	exit 1
+fi
+
+"$@"
+
