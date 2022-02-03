@@ -3,10 +3,10 @@
 FILE=~/pokeapp/pokedex.csv
 
 usage() {
-	echo "$0" <command> [<args>]
-	echo Commands
-	echo 	list		list all types
-	echo	num		count total number of type as arg
+	echo "$0 <command> [<args>]"
+	echo "Commands"
+	echo "	list		list all types"
+	echo "	num		count total number of type as arg"
 }
 
 list() {
