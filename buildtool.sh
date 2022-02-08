@@ -18,5 +18,14 @@ test() {
 	cmp numGrass.actual numGrass.expected || echo "numGrass test failed..."
 }
 
+build() {
+	echo "Compiling Java program to ./bin"
+	javac -d bin src/Pokedex.java
+}
+
+run() {
+	build && java -cp bin Pokedex "$@"
+}
+
 "$@"
 
