@@ -1,0 +1,10 @@
+apply plugin: 'application'
+
+mainClassName = 'com.github.MehrabRahman.pokedex.App'
+
+jar {
+	manifest {
+		attributes 'Main-Class': mainClassName
+	}
+}
+
